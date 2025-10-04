@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     AudioSource myAudio;
     [SerializeField] private AudioClip menuSong;
     [SerializeField] private AudioClip cutsceneSong;
     [SerializeField] private AudioClip gameSong;
+
+    [SerializeField] Slider volumeSlider;
     void ManageSingleton()
     {
         int instance = FindObjectsByType<AudioManager>(FindObjectsSortMode.None).Length;
@@ -44,5 +47,10 @@ public class AudioManager : MonoBehaviour
         {
             myAudio.Play();
         }
+    }
+
+    public void UpdateVolume()
+    {
+        myAudio.volume = volumeSlider.value;
     }
 }
