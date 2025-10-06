@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip menuSong;
     [SerializeField] private AudioClip cutsceneSong;
     [SerializeField] private AudioClip gameSong;
+    [SerializeField] private AudioClip storySong;
 
     [SerializeField] Slider volumeSlider;
     void ManageSingleton()
@@ -38,9 +39,13 @@ public class AudioManager : MonoBehaviour
         {
             myAudio.clip = cutsceneSong;
         }
+        else if(SceneManager.GetActiveScene().name == "Story")
+        {
+            myAudio.clip = storySong;
+        }
         else
         {
-            myAudio.clip= gameSong;
+            myAudio.clip = gameSong;
         }
 
         if(!myAudio.isPlaying)

@@ -9,7 +9,15 @@ public class Sound : MonoBehaviour
     private void Awake()
     {
         myAudio = GetComponent<AudioSource>();
-        myAudio.volume = FindAnyObjectByType<SFXManager>().volume;
+        SFXManager sfxManager = FindAnyObjectByType<SFXManager>();
+        if(sfxManager != null )
+        {
+            myAudio.volume = sfxManager.volume;
+        }
+        else
+        {
+            myAudio.volume = 0.5f;
+        }
     }
 
     public void HoverSound()
