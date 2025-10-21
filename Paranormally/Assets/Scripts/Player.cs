@@ -10,9 +10,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpSpeed;
     [SerializeField] private float maxVelocity;
+    [SerializeField] private float dashForce;
+    [SerializeField] private float antiGravityBoostForce;
     public LayerMask groundLayer;
     bool canJump;
     bool isFacingRight = true;
+
+    bool canUseAGB = false;
+    bool canUseDash = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,10 +31,22 @@ public class Player : MonoBehaviour
         if(myCollider.IsTouchingLayers(groundLayer))
         {
             canJump = true;
+            canUseAGB = true;
+            canUseDash = true;
         }
         else
         {
             canJump = false;
+        }
+        if (Keyboard.current.cKey.wasPressedThisFrame && canUseDash)
+        {
+            Dash();
+            canUseDash = false;
+        }
+        if(Keyboard.current.zKey.wasPressedThisFrame && canUseAGB)
+        {
+            AntiGravityBoost();
+            canUseAGB = false;
         }
     }
 
@@ -91,5 +108,24 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
             isFacingRight = true;
         }
+    }
+
+    void Dash()
+    {
+        anim.SetTrigger("dash");
+        if(isFacingRight)
+        {
+            rb.AddForceX(dashForce, mode: ForceMode2D.Impulse);
+        }
+        else
+        {
+            rb.AddForceX(-dashForce, mode: ForceMode2D.Impulse);
+        }
+    }
+
+    void AntiGravityBoost()
+    {
+        anim.SetTrigger("dash");
+        rb.AddForceY(antiGravityBoostForce, mode: ForceMode2D.Impulse);
     }
 }

@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &178629384
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -302,6 +302,8 @@ MonoBehaviour:
   speed: 6
   jumpSpeed: 5
   maxVelocity: 4
+  dashForce: 5
+  antiGravityBoostForce: 5
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -375,7 +377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &237323738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +393,8 @@ MonoBehaviour:
   speed: 6
   jumpSpeed: 5
   maxVelocity: 4
+  dashForce: 5
+  antiGravityBoostForce: 5
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
