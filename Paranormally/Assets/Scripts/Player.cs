@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
 
     bool canUseAGB = false;
     bool canUseDash = false;
+
+    public bool canMove = true;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,27 +29,31 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        FlipSprite();
-        if(myCollider.IsTouchingLayers(groundLayer))
+        if(canMove)
         {
-            canJump = true;
-            canUseAGB = true;
-            canUseDash = true;
+            FlipSprite();
+            if (myCollider.IsTouchingLayers(groundLayer))
+            {
+                canJump = true;
+                canUseAGB = true;
+                canUseDash = true;
+            }
+            else
+            {
+                canJump = false;
+            }
+            if (Keyboard.current.cKey.wasPressedThisFrame && canUseDash)
+            {
+                Dash();
+                canUseDash = false;
+            }
+            if (Keyboard.current.zKey.wasPressedThisFrame && canUseAGB)
+            {
+                AntiGravityBoost();
+                canUseAGB = false;
+            }
         }
-        else
-        {
-            canJump = false;
-        }
-        if (Keyboard.current.cKey.wasPressedThisFrame && canUseDash)
-        {
-            Dash();
-            canUseDash = false;
-        }
-        if(Keyboard.current.zKey.wasPressedThisFrame && canUseAGB)
-        {
-            AntiGravityBoost();
-            canUseAGB = false;
-        }
+        
     }
 
 
@@ -58,7 +64,7 @@ public class Player : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if(value.isPressed && canJump)
+        if(value.isPressed && canJump && canMove)
         {
             anim.SetTrigger("jump");
             rb.linearVelocityY += jumpSpeed;
@@ -67,7 +73,11 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Walk();
+        if(canMove)
+        {
+            Walk();
+        }
+        
     }
 
     void Walk()
