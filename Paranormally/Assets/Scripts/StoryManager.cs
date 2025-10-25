@@ -7,6 +7,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] TMP_Text dialogText;
     [SerializeField] GameObject nextButton;
     [SerializeField] GameObject storyCutscene;
+    [SerializeField] GameObject skipButton;
     public string[] dialogs;
     string currentDialog;
     int index = 0;
@@ -46,7 +47,32 @@ public class StoryManager : MonoBehaviour
         }
         else
         {
+            if(skipButton!=null)
+            {
+                skipButton.SetActive(false);
+            }
             storyCutscene.SetActive(true);
         }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void EndSkip()
+    {
+        dialogText.text = "";
+        nextButton.SetActive(false);
+        if(skipButton!=null)
+        {
+            skipButton.SetActive(false);
+        }
+        storyCutscene.SetActive(true);
     }
 }

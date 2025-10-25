@@ -18,7 +18,7 @@ TagManager:
   - Background
   - Spirit
   - Spike
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 607577489
+    locked: 0
+  - name: Interactable
+    uniqueID: 2037115137
     locked: 0
   - name: Player
     uniqueID: 1815534267
