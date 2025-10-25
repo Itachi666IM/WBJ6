@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
         {
             myAudio.clip = cutsceneSong;
         }
-        else if(SceneManager.GetActiveScene().name == "Story")
+        else if(SceneManager.GetActiveScene().name == "Story" || SceneManager.GetActiveScene().name == "End")
         {
             myAudio.clip = storySong;
         }
