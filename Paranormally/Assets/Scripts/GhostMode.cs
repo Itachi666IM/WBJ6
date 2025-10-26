@@ -10,6 +10,12 @@ public class GhostMode : MonoBehaviour
     [HideInInspector]public bool isGhostModeOn = false;
     public GameObject player;
     public GameObject silhouette;
+    SFXManager sfxManager;
+    [SerializeField] AudioClip ghostSound;
+    private void Awake()
+    {
+        sfxManager = FindAnyObjectByType<SFXManager>();
+    }
     void ToggleGameObjects()
     {
         if(isColored)
@@ -46,6 +52,7 @@ public class GhostMode : MonoBehaviour
     {
         if(canUseGhostMode && Keyboard.current.xKey.wasPressedThisFrame)
         {
+            sfxManager.PlayAnyAudio(ghostSound);
             ToggleGameObjects();
         }
     }

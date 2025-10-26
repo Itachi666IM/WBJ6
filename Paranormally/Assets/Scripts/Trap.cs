@@ -6,11 +6,14 @@ public class Trap : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] int speed;
     GhostMode ghostMode;
+    Sound sound;
+    [SerializeField] AudioClip myClip;
     private void Awake()
     {
         ghostMode = FindAnyObjectByType<GhostMode>();
         spawner = FindAnyObjectByType<TrapSpawner>();   
         rb = GetComponent<Rigidbody2D>();
+        sound = GetComponent<Sound>();
     }
     private void Start()
     {
@@ -21,6 +24,7 @@ public class Trap : MonoBehaviour
     {
         if(collision.tag == "Player" && !ghostMode.isGhostModeOn)
         {
+            sound.PlayAnySound(myClip);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

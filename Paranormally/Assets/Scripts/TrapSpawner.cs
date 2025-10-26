@@ -12,9 +12,12 @@ public class TrapSpawner : MonoBehaviour
     public float timeBetweenSpaens;
     float nextSpawnTime;
     GhostMode ghostMode;
+    Sound sound;
+    [SerializeField] AudioClip myClip;
     private void Awake()
     {
         ghostMode = FindAnyObjectByType<GhostMode>();
+        sound = GetComponent<Sound>();
     }
 
     void Left()
@@ -69,6 +72,7 @@ public class TrapSpawner : MonoBehaviour
     {
         if(Time.time > nextSpawnTime)
         {
+            sound.PlayAnySound(myClip);
             nextSpawnTime = Time.time + timeBetweenSpaens;
             if (isGoingLeft)
             {

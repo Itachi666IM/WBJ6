@@ -67,7 +67,7 @@ public class StoryManager : MonoBehaviour
 
     public void EndSkip()
     {
-        dialogText.text = "";
+        dialogText.gameObject.SetActive(false);
         nextButton.SetActive(false);
         if(skipButton!=null)
         {
