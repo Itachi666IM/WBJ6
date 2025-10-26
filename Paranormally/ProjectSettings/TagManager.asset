@@ -19,7 +19,7 @@ TagManager:
   - Spirit
   - Spike
   - Interactable
-  - 
+  - Trap
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 607577489
+    locked: 0
+  - name: Trap
+    uniqueID: 923677143
     locked: 0
   - name: Interactable
     uniqueID: 2037115137
