@@ -7,6 +7,8 @@ public class GhostMode : MonoBehaviour
     public GameObject[] silhouetteObjects;
     bool isColored = true;
     [HideInInspector]public bool canUseGhostMode = false;
+    public GameObject player;
+    public GameObject silhouette;
     void ToggleGameObjects()
     {
         if(isColored)
@@ -20,6 +22,7 @@ public class GhostMode : MonoBehaviour
             {
                 coloredObjects[i].SetActive(false);
             }
+            silhouette.transform.position = player.transform.position;
         }
         else
         {
@@ -32,6 +35,7 @@ public class GhostMode : MonoBehaviour
             {
                 silhouetteObjects[i].SetActive(false);
             }
+            player.transform.position = silhouette.transform.position;
         }
     }
 

@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 958136719028334822, guid: cc7fd43b8c431c94595939bc5a789c6e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.96
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 958136719028334822, guid: cc7fd43b8c431c94595939bc5a789c6e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1517,7 +1517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6354720845754290293, guid: 4bb464c713d68e842893476460bf2225, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.96
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 6354720845754290293, guid: 4bb464c713d68e842893476460bf2225, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1969,7 +1969,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press 'E' Near Door to Proceed
+  m_text: 'Press ''E'' Near Door to Proceed
+
+    (Can''t access in ghost mode)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d83950a5ca827542955f6404c94d005, type: 2}
   m_sharedMaterial: {fileID: -1381731838093693559, guid: 4d83950a5ca827542955f6404c94d005, type: 2}
@@ -2545,6 +2547,142 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4231468558893778103, guid: 6d439a1db53f57b4489f0a5546c59ed4, type: 3}
   m_PrefabInstance: {fileID: 1833305918}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1858018831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1858018832}
+  - component: {fileID: 1858018834}
+  - component: {fileID: 1858018833}
+  m_Layer: 5
+  m_Name: Tutorial (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1858018832
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858018831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2119059906}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 35}
+  m_SizeDelta: {x: 600, y: 120}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1858018833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858018831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Note: - You cannot move while in air'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 4d83950a5ca827542955f6404c94d005, type: 2}
+  m_sharedMaterial: {fileID: -1381731838093693559, guid: 4d83950a5ca827542955f6404c94d005, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4288080383
+  m_fontColor: {r: 1, g: 0.91460055, b: 0.58679235, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 48
+  m_fontSizeBase: 48
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1858018834
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858018831}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1867559006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2683,6 +2821,8 @@ MonoBehaviour:
   - {fileID: 872558332}
   - {fileID: 1283495255222664624}
   canUseGhostMode: 0
+  player: {fileID: 3463597358148536968}
+  silhouette: {fileID: 3717139362169869661}
 --- !u!4 &1990461667
 Transform:
   m_ObjectHideFlags: 0
@@ -3000,6 +3140,7 @@ RectTransform:
   - {fileID: 1293910952}
   - {fileID: 2058137873}
   - {fileID: 1423404354}
+  - {fileID: 1858018832}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3153,7 +3294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5011567388462152882, guid: 555d7ecf55c2b7f46924e433405ff760, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.51
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: 5011567388462152882, guid: 555d7ecf55c2b7f46924e433405ff760, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3263,7 +3404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6411963241054085106, guid: 9eb248c5cdf421b48bf888868d04894f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.34
+      value: -5.69
       objectReference: {fileID: 0}
     - target: {fileID: 6411963241054085106, guid: 9eb248c5cdf421b48bf888868d04894f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3325,7 +3466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5879542262418381076, guid: 8534e51e0f3011a4fbb40c03103fd9ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.51
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: 5879542262418381076, guid: 8534e51e0f3011a4fbb40c03103fd9ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3382,11 +3523,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1572634009425957535, guid: 902b201ad2e00dd4696aeb15035874b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.36
+      value: -3.03
       objectReference: {fileID: 0}
     - target: {fileID: 1572634009425957535, guid: 902b201ad2e00dd4696aeb15035874b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1572634009425957535, guid: 902b201ad2e00dd4696aeb15035874b7, type: 3}
       propertyPath: m_LocalPosition.z
