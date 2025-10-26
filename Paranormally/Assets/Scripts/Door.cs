@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     bool nextLevelAccess = false;
-
+    Sound sound;
+    [SerializeField] AudioClip mySound;
+    private void Awake()
+    {
+        sound = GetComponent<Sound>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
@@ -28,8 +33,14 @@ public class Door : MonoBehaviour
         {
             if(Keyboard.current.eKey.wasPressedThisFrame)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                sound.PlayAnySound(mySound);
+                Invoke(nameof(LoadNextLevel), 0.5f);
             }
         }
+    }
+
+    void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

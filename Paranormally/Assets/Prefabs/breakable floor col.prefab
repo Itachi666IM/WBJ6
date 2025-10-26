@@ -149,3 +149,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructionTime: 1
   breakableFloorSil: {fileID: 0}
+  breakSound: {fileID: 8300000, guid: 3932e429d259955429b42b2df0ce2d1f, type: 3}

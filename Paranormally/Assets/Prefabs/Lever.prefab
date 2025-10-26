@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2037115137
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c253325fd0ace1744a67a2fc77e37ee5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -107,6 +107,7 @@ MonoBehaviour:
   leverOpenSil: {fileID: 21300000, guid: 43deec517d0f330458726284239dcc1c, type: 3}
   wallTrap: {fileID: 0}
   wallTrapSil: {fileID: 0}
+  myClip: {fileID: 8300000, guid: 12f77ff8fe800d340bc6d93b8eca442d, type: 3}
 --- !u!61 &7449957772393474681
 BoxCollider2D:
   m_ObjectHideFlags: 0

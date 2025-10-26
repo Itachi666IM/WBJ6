@@ -30,4 +30,8 @@ public class Sound : MonoBehaviour
         myAudio.PlayOneShot(clickSound);
     }
 
+    public void PlayAnySound(AudioClip clip)
+    {
+        myAudio.PlayOneShot(clip);
+    }
 }

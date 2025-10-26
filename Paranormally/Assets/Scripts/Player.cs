@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     BoxCollider2D myCollider;
     Animator anim;
+    AudioSource myAudio;
     Vector2 moveDirection;
     [SerializeField] private float speed;
     [SerializeField] private float jumpSpeed;
@@ -20,11 +21,17 @@ public class Player : MonoBehaviour
     bool canUseDash = false;
 
     public bool canMove = true;
+    SFXManager sfx;
+    [SerializeField] AudioClip jumpSound;
+    [SerializeField] AudioClip dashSound;
+    [SerializeField] AudioClip upDashSound;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        myAudio = GetComponent<AudioSource>();
+        sfx = FindAnyObjectByType<SFXManager>();
     }
 
     private void Update()
@@ -66,6 +73,7 @@ public class Player : MonoBehaviour
     {
         if(value.isPressed && canJump && canMove)
         {
+            sfx.PlayAnyAudio(jumpSound);
             anim.SetTrigger("jump");
             rb.linearVelocityY += jumpSpeed;
         }
@@ -91,10 +99,12 @@ public class Player : MonoBehaviour
         if(Mathf.Abs(moveDirection.x)> 0f)
         {
             anim.SetBool("isWalking", true);
+            myAudio.enabled = true;
         }
         else
         {
             anim.SetBool("isWalking", false);
+            myAudio.enabled = false;
         }
         if (rb.linearVelocityX > maxVelocity)
         {
@@ -122,6 +132,7 @@ public class Player : MonoBehaviour
 
     void Dash()
     {
+        sfx.PlayAnyAudio(dashSound);
         anim.SetTrigger("dash");
         if(isFacingRight)
         {
@@ -135,6 +146,7 @@ public class Player : MonoBehaviour
 
     void AntiGravityBoost()
     {
+        sfx.PlayAnyAudio(upDashSound);
         anim.SetTrigger("dash");
         rb.AddForceY(antiGravityBoostForce, mode: ForceMode2D.Impulse);
     }

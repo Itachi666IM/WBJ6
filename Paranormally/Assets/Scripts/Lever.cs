@@ -16,10 +16,14 @@ public class Lever : MonoBehaviour
     public GameObject wallTrap;
     public GameObject wallTrapSil;
 
+    public AudioClip myClip;
+    SFXManager sfx;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         ghostMode = FindAnyObjectByType<GhostMode>();
+        sfx = FindAnyObjectByType<SFXManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,6 +50,7 @@ public class Lever : MonoBehaviour
 
         if(canPullLever && Keyboard.current.eKey.wasPressedThisFrame)
         {
+            sfx.PlayAnyAudio(myClip);
             if(isLeverOpen)
             {
                 isLeverOpen = false;
